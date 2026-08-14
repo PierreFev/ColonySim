@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://bywyqsl71wexj"]
+
+[ext_resource type="Script" uid="uid://djjhsm2dirl5x" path="res://scenes/building/BuildingData.gd" id="1_32w1u"]
+[ext_resource type="Texture2D" uid="uid://b3jbdif6u28jt" path="res://assets/buildings/substation.png" id="2_pn1c6"]
+
+[resource]
+script = ExtResource("1_32w1u")
+name = "Electrical Substation"
+texture = ExtResource("2_pn1c6")
+width = 2
+height = 2
+metadata/_custom_type_script = "uid://djjhsm2dirl5x"

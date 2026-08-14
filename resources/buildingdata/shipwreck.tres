@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://d302antd1dfmy"]
+
+[ext_resource type="Script" uid="uid://djjhsm2dirl5x" path="res://scenes/building/BuildingData.gd" id="1_4s418"]
+[ext_resource type="Texture2D" uid="uid://dl6j58ia612lc" path="res://assets/buildings/crashed_spaceship.png" id="2_rw32k"]
+
+[resource]
+script = ExtResource("1_4s418")
+name = "Shipwreck"
+texture = ExtResource("2_rw32k")
+width = 3
+height = 3
+metadata/_custom_type_script = "uid://djjhsm2dirl5x"

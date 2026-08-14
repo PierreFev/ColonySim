@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c4aktmbtgen22"]
+
+[ext_resource type="Script" uid="uid://s5p04bclqk07" path="res://scenes/game.gd" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://d3rb2uu43ya7e" path="res://scenes/world/world.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://bcsj5l8jgtjfe" path="res://scenes/menu_button.gd" id="3_lnu2h"]
+[ext_resource type="Resource" uid="uid://gdp0mhq5x8ho" path="res://resources/buildingdata/house.tres" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://djjhsm2dirl5x" path="res://scenes/building/BuildingData.gd" id="4_p57ef"]
+[ext_resource type="Resource" uid="uid://bywyqsl71wexj" path="res://resources/buildingdata/substation.tres" id="6_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://b0po22panqar5" path="res://assets/ui/panel.png" id="7_u5sy4"]
+[ext_resource type="Resource" uid="uid://ddpds3htvgxx6" path="res://resources/buildingdata/chemical_plant.tres" id="8_gee14"]
+
+[node name="Game" type="Node" unique_id=909537180]
+script = ExtResource("1_lnu2h")
+
+[node name="world" parent="." unique_id=1086895026 instance=ExtResource("1_uwrxv")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1079373510]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer" unique_id=1153151851]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -107.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_u5sy4")
+region_rect = Rect2(0, 0, 512, 239)
+patch_margin_left = 79
+patch_margin_top = 53
+patch_margin_right = 79
+patch_margin_bottom = 54
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/NinePatchRect" unique_id=704595943]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="BuildingsButton" type="MenuButton" parent="CanvasLayer/NinePatchRect/HBoxContainer" unique_id=1233053443]
+layout_mode = 2
+text = "Buildings"
+script = ExtResource("3_lnu2h")
+building_list = Array[ExtResource("4_p57ef")]([ExtResource("4_lbhrr"), ExtResource("6_u5sy4"), ExtResource("8_gee14")])
+
+[node name="OverlaysButton" type="MenuButton" parent="CanvasLayer/NinePatchRect/HBoxContainer" unique_id=2106676692]
+layout_mode = 2
+text = "Overlays"
+
+[connection signal="building_selected" from="CanvasLayer/NinePatchRect/HBoxContainer/BuildingsButton" to="." method="_on_menu_button_building_selected"]
