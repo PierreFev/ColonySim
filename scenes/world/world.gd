@@ -18,5 +18,10 @@ func place_building(building_blueprint: BuildingBlueprint, mouse_position: Vecto
 	building.data = building_data
 	building.rotated = building_blueprint.rotated
 	building.position = snap_to_cell(mouse_position)
-	print(mouse_position, building.position)
 	buildings.add_child(building)
+	var map_position = $TerrainTileMap.local_to_map(building.position)
+	for x in range(building.data.width):
+		for y in range(building.data.height):
+			$TerrainTileMap.set_cell(map_position+Vector2i(x,y),
+			0,
+			Vector2i(3,0))
