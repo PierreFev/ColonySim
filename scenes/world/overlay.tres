@@ -1,0 +1,22 @@
+[gd_resource type="VisualShader" format=3 uid="uid://cx0lcfsv8vo1s"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_xq3pg"]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_3440c"]
+input_name = "model_matrix"
+
+[sub_resource type="VisualShaderNodeTransformOp" id="VisualShaderNodeTransformOp_8gawo"]
+
+[resource]
+mode = 1
+flags/light_only = false
+varyings/world_position = "0,0"
+nodes/vertex/0/position = Vector2(580, 140)
+nodes/vertex/3/node = SubResource("VisualShaderNodeInput_xq3pg")
+nodes/vertex/3/position = Vector2(40, 260)
+nodes/vertex/4/node = SubResource("VisualShaderNodeInput_3440c")
+nodes/vertex/4/position = Vector2(20, 60)
+nodes/vertex/5/node = SubResource("VisualShaderNodeTransformOp_8gawo")
+nodes/vertex/5/position = Vector2(320, 60)
+nodes/vertex/connections = PackedInt32Array(3, 0, 0, 0, 4, 0, 5, 0)

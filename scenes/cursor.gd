@@ -23,11 +23,25 @@ func update(building_blueprint: BuildingBlueprint):
 	if not building_blueprint:
 		return
 	_building_blueprint = building_blueprint
-	var building_data = building_blueprint.building_data
-	var building_size = Vector2(building_data.width, building_data.height)
-	$build.scale = building_size
-	$sprite2d.texture = building_data.texture
+	var data = building_blueprint.building_data
+
+	$sprite2d.texture = data.texture
 	$sprite2d.flip_h = building_blueprint.rotated
+
+	var w: int = data.width
+	var h: int = data.height
+	var footprint = Vector2i(h,w) if building_blueprint.rotated else Vector2i(w,h)
+	$sprite2d.texture = data.texture
+	$build.polygon = [
+		Vector2i(0,0),
+		Vector2i(16*footprint.x, -8*footprint.x),
+		Vector2i(16*(footprint.x+footprint.y), -8*(footprint.x-footprint.y)),
+		Vector2i(16*footprint.y,8*footprint.y),
+		]
+	var tex_h = data.texture.get_height()
+	$sprite2d.position.x = 0
+	$sprite2d.position.y = -tex_h + 8*footprint.y
+
 	
 func set_mode(mode: CursorMode, building_blueprint: BuildingBlueprint = null):
 	current_cursor_mode = mode
@@ -39,8 +53,9 @@ func set_mode(mode: CursorMode, building_blueprint: BuildingBlueprint = null):
 		$blocked.show()
 	if mode == CursorMode.PLACE_BUILDING:
 		$build.show()
-		update(building_blueprint)
 		$sprite2d.show()
+		update(building_blueprint)
+		
 		
 		
 		

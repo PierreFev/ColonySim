@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfo30ggwe5mb4"]
 
 [ext_resource type="Script" uid="uid://bmd8cbkad0v22" path="res://scenes/cursor.gd" id="1_1eco6"]
+[ext_resource type="Texture2D" uid="uid://cuo5veuowvha3" path="res://assets/buildings/garden.png" id="2_s0nli"]
 
 [node name="cursor" type="Node2D" unique_id=545898188]
 script = ExtResource("1_1eco6")
@@ -8,17 +9,17 @@ metadata/_edit_horizontal_guides_ = [-1224.0]
 
 [node name="select" type="Polygon2D" parent="." unique_id=1711744722]
 color = Color(1, 1, 1, 0.3882353)
-polygon = PackedVector2Array(0, 0, -16, 8, 0, 16, 16, 8)
+polygon = PackedVector2Array(16, -8, 0, 0, 16, 8, 32, 0)
 
 [node name="build" type="Polygon2D" parent="." unique_id=413557282]
-visible = false
 color = Color(0.49, 0.53249997, 1, 0.3882353)
-polygon = PackedVector2Array(0, 0, -16, 8, 0, 16, 16, 8)
+polygon = PackedVector2Array(16, -8, 0, 0, 16, 8, 32, 0)
 
 [node name="blocked" type="Polygon2D" parent="." unique_id=441222200]
-visible = false
 color = Color(1, 0, 0, 0.48235294)
 polygon = PackedVector2Array(0, 0, 16, -8, 32, 0, 16, 8)
 
 [node name="sprite2d" type="Sprite2D" parent="." unique_id=800550519]
 modulate = Color(0.25, 0.3250001, 1, 0.45490196)
+texture = ExtResource("2_s0nli")
+centered = false

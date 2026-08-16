@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://26s542t2kana"]
+
+[ext_resource type="Script" uid="uid://djjhsm2dirl5x" path="res://scenes/building/BuildingData.gd" id="1_867v8"]
+[ext_resource type="Texture2D" uid="uid://cuo5veuowvha3" path="res://assets/buildings/garden.png" id="2_867v8"]
+
+[resource]
+script = ExtResource("1_867v8")
+name = "garden"
+texture = ExtResource("2_867v8")
+metadata/_custom_type_script = "uid://djjhsm2dirl5x"

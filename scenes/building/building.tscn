@@ -9,4 +9,11 @@ script = ExtResource("1_n8bkc")
 data = ExtResource("2_uvy8r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=423830259]
+position = Vector2(0, -41)
 texture = ExtResource("3_qg5jt")
+centered = false
+
+[node name="footprint" type="Polygon2D" parent="." unique_id=473403304]
+visible = false
+color = Color(1, 1, 1, 0.3372549)
+polygon = PackedVector2Array(0, 0, 48, -24, 96, 0, 48, 24)

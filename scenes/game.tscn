@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://bywyqsl71wexj" path="res://resources/buildingdata/substation.tres" id="6_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://b0po22panqar5" path="res://assets/ui/panel.png" id="7_u5sy4"]
 [ext_resource type="Resource" uid="uid://ddpds3htvgxx6" path="res://resources/buildingdata/chemical_plant.tres" id="8_gee14"]
+[ext_resource type="Resource" uid="uid://26s542t2kana" path="res://resources/buildingdata/garden.tres" id="9_0tnpc"]
 
 [node name="Game" type="Node" unique_id=909537180]
 script = ExtResource("1_lnu2h")
@@ -46,7 +47,7 @@ alignment = 1
 layout_mode = 2
 text = "Buildings"
 script = ExtResource("3_lnu2h")
-building_list = Array[ExtResource("4_p57ef")]([ExtResource("4_lbhrr"), ExtResource("6_u5sy4"), ExtResource("8_gee14")])
+building_list = Array[ExtResource("4_p57ef")]([ExtResource("4_lbhrr"), ExtResource("6_u5sy4"), ExtResource("8_gee14"), ExtResource("9_0tnpc")])
 
 [node name="OverlaysButton" type="MenuButton" parent="CanvasLayer/NinePatchRect/HBoxContainer" unique_id=2106676692]
 layout_mode = 2
